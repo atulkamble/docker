@@ -1,6 +1,4 @@
-Below is a **student-friendly Docker training guide** organized as **Points to Remember → Architecture → Steps → Commands → Practice**.
-
-# Docker Training Guide
+# Docker Training 
 
 ## 1. Modern Application Architecture
 
