@@ -1,5 +1,84 @@
 # Docker Training 
 
+```
+// ECR Practice
+
+1. Fork, Clone and Open Repo
+git clone https://github.com/atulkamble/flaskhelloworld.git
+cd /flaskhelloworld
+code .
+
+2.
+
+aws --version
+
+IAM >> atul (user) >> admin (group)
+AdminAccess policy
+
+create access key, secret access key
+
+aws configure >> paste
+access key
+secret access key
+us-east-1
+json
+
+git clone https://github.com/atulkamble/flaskhelloworld.git
+cd /flaskhelloworld
+
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 535002879962.dkr.ecr.us-east-1.amazonaws.com
+
+docker build --platform linux/amd64,linux/arm64 -t 535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/myapp:latest --push .
+
+docker images
+
+docker run -d -p 5000:5000 535002879962.dkr.ecr.us-east-1.amazonaws.com/cloudnautic/myapp:latest
+
+docker container ls
+
+// network
+docker network --help
+docker network ls
+docker network create mynetwork
+docker network inspect mynetwork
+docker network ls
+docker network rm mynetwork
+docker network ls
+docker network prune
+
+docker network connect mynetwork mycontainer
+docker network disconnect mynetwork mycontainer
+
+
+// volume
+docker volume --help
+docker volume ls
+docker volume create myvolume
+docker volume inspect myvolume
+docker volume ls
+docker volume rm myvolume
+docker volume prune -a
+
+// container commands
+
+docker container create -p 80:80 --name mycontainer nginx
+docker container start mycontainer
+docker container ls
+
+// run container with volume attached to it
+docker container create -p 80:80 -v myvolume --name mycontainer nginx
+docker container start mycontainer
+docker inspect mycontainer
+
+// run container with volume and network
+docker network create mynetwork
+docker volume create myvolume
+docker container create -p 80:80 -v myvolume --network mynetwork --name mycontainer nginx
+docker inspect mycontainer
+
+```
+
 ## 1. Modern Application Architecture
 
 ### Monolithic Architecture
