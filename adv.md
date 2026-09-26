@@ -1,4 +1,4 @@
-# Docker Networking, Volumes & Compose — Hands-on README
+# Docker Networking, Volumes & Compose 
 
 A beginner-friendly, reproducible lab for Docker Engine on Linux or Docker Desktop. You will connect containers, persist data, and run a Flask + PostgreSQL application with Docker Compose.
 
